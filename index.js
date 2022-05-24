@@ -20,6 +20,7 @@ const initialUserState ={
             type: INCREMENT
         }
     }
+
 // DECREMENT COUNTER
 const decrementCounter = ()=>{
 
@@ -28,10 +29,33 @@ const decrementCounter = ()=>{
       }
   }
 //   ADD_USER
-const addUser = ()=>{
+// const addUser = ()=>{
 
-    return  {
-          type: ADD_USER,
-         payload:{name:"shakil"} 
-      }
-  }
+//     return  {
+//           type: ADD_USER,
+//          payload:{name:"mehidy"} 
+//       }
+//   }
+
+// create reducer for counter
+
+const counterReducer = (state=initialCounterState,action)=>{
+    switch (action.type) {
+
+        case INCREMENT:
+            return{
+                ...state,
+                count:state.count+1
+            }
+
+            case DECREMENT:
+                return{
+                    ...state,
+                    count:state.count-1
+                }
+
+            default :
+            state;
+
+    }
+}
